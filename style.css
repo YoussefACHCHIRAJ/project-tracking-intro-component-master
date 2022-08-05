@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ :root{
+    --Red: hsl(0, 100%, 68%);
+    --Very-Dark-Blue: hsl(230, 29%, 20%);
+    --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+    --Light-Grayish-Blue: hsl(207, 33%, 95%);
+    --ff-head: 'Barlow Condensed', sans-serif;
+    --ff-main: 'Barlow', sans-serif;
+}
+/**** phone Design ****/
+/* Strat header */
+header{
+    min-height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em;
+}
+header:after{
+    content: '';
+    width: 15em;
+    height: 20em;
+    background: var(--Light-Grayish-Blue);
+    position: absolute;
+    top: 0; right: 0;
+    border-bottom-left-radius: 40px;
+    z-index: -1;
+}
+header .Open_close {
+    width: 3em;
+    height: 3em;
+    position: relative;
+}
+header .Open_close > *{
+    position: absolute;
+    border: 0;
+    background: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+header .Open_close .close{
+    display: none;
+}
+header nav{
+    width: calc( 100% - 4em);
+    min-height: 12em;
+    position: absolute;
+    top: 4em;
+    left: 50%;
+    transform: translate( -50% , 0);
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: -8px 9px 9px rgb(0,0,0,0.2);
+    color: var(--Very-Dark-Blue);
+    font-family: var(--ff-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding: 1em;
+    display: none;
+    z-index: 11;
+}
+header nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    list-style: none;
+}
+header nav ul li button{
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--Dark-Grayish-Blue);
+    font-family: var(--ff-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    margin-top: 1em;
+    padding: .5em 4em;
+    border-top: 1px solid rgb(210, 210, 210);
+}
+/* End header */
+
+/* Strat main */
+main{
+    padding-inline: 1em;
+    width: 100%;
+    min-height: 30em;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+main > *{
+    font-family: var(--ff-main);
+}
+/* Strat first section <image> */
+main .image_box{
+    width: calc( 100% - 2em);
+    min-height: 14em;
+    background-image: url(images/illustration-devices.svg);
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    margin-bottom: 3em;
+}
+/* End first section  */
+/* Strat second section <content> */
+main .container{
+    width: 100%;
+    min-height: 12em;
+    margin-bottom: .5em;
+}
+main .container .whatsNew{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+main .container .whatsNew .new{
+    background: rgb(10, 10, 42);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--Light-Grayish-Blue);
+    padding: .4em .8em;
+    border-radius: 20px;
+}
+main .container .whatsNew .MD{
+    color: var(--Dark-Grayish-Bluee);
+    opacity: .7;
+    font-size: 1.2rem;
+    font-weight: 400; 
+    font-family: var(--ff-main);
+}
+main .container h1{
+    color: var(--Very-Dark-Blue);
+    font-weight: 700;
+    font-family: var(--ff-head);
+    font-size: 3rem;
+    text-transform: uppercase;
+   margin-block: .2em;
+}
+main .container .smallDescrp{
+    color: var(--Dark-Grayish-Blue);
+    font-weight: 400;
+    font-family: var(--ff-main);
+    font-size: 1.5rem;
+    margin-block-end: 1em;
+}
+main .container .demo{
+    background: var(--Red);
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    padding: 1em 1.5em;
+    color: var(--Light-Grayish-Blue);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: var(--ff-main);
+    font-size: 1rem;
+    margin-right: .8em;
+}
+main .container .see{
+    background: 0;
+    border: 0;
+    outline: 0;
+    text-transform: uppercase;
+    color: var(--Dark-Grayish-Blue);
+}
+/* End second section <content> */
+/* End main*/
+/** desktop design **/
+@media (min-width: 950px){
+    /* Strat header */
+    header{
+        padding-inline: 6em;
+    }
+    header:after{
+        content: '';
+        width: 40em;
+        height: 20em;
+    }
+    header .Open_close {
+        display: none;
+    }
+    
+    header nav{
+        width: 30em;
+        min-height: 2em;
+        position: initial;
+        top: 0;
+        left: 0;
+        transform: translate( 0 , 0);
+        background: none;
+        box-shadow: none;
+        font-size: 1.2rem;
+        padding: 1em;
+        display: block;
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        list-style: none;
+    }
+    header nav ul li button{
+        font-size: 1.2rem;
+        margin-left: 3em;
+        margin-top: 0;
+        padding: 0;
+        border: 0;
+    }
+    /* End header */
+    main{
+        padding-inline: 6em;
+        width: 100%;
+        min-height: 30em;
+        margin-top: 2em;
+        flex-direction: row;
+    }
+    /* Strat first section <image> */
+    main .image_box{
+        order: 2;
+        width: 70em;
+        max-height: 30em;
+        background-size: 140%;
+    }
+    /* End first section  */
+    /* Strat second section <content> */
+    main .container{
+        margin-top: 0;
+        padding-top: 3em;
+    }
+    main .container h1{
+        max-width: calc( 100% - 2em);
+        font-size: 3.5em;
+    }
+    main .container .smallDescrp{
+        width: calc( 70% - 2em);
+        margin-block-end: 2em;
+    }
+    /* End second section <content> */
+    /* End main*/
+}
